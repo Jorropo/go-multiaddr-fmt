@@ -45,7 +45,7 @@ var QUIC = And(UDP, Base(ma.P_QUIC))
 var Unreliable = Or(UDP)
 
 // Now define a Reliable transport as either tcp or utp or quic
-var Reliable = Or(TCP, UTP, QUIC)
+var Reliable = Or(TCP, UTP, QUIC, WebRTCAside)
 
 // P2P can run over any reliable underlying transport protocol
 var P2P = And(Reliable, Base(ma.P_P2P))
@@ -73,6 +73,9 @@ var HTTPS = Or(
 var WebRTCDirect = Or(
 	And(HTTP, Base(ma.P_P2P_WEBRTC_DIRECT)),
 	And(HTTPS, Base(ma.P_P2P_WEBRTC_DIRECT)))
+
+// Define p2p-webrtc-aside as it self
+var WebRTCAside = Base(ma.P_P2P_WEBRTC_ASIDE)
 
 const (
 	or  = iota

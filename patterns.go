@@ -75,7 +75,7 @@ var WebRTCDirect = Or(
 	And(HTTPS, Base(ma.P_P2P_WEBRTC_DIRECT)))
 
 // Define p2p-webrtc-aside as it self
-var WebRTCAside = Base(ma.P_P2P_WEBRTC_ASIDE)
+var WebRTCAside = Base(ma.P_WEBRTC_ASIDE)
 
 const (
 	or  = iota
